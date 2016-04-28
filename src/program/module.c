@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <string.h>
-#include "../data_types/list_structures/ulvpclist.h"
 #include "../data_types/list_structures/sandndlist.h"
 #include "../data_types/misc_structures/bigthing.h"
 #include "memory.h"
@@ -40,7 +39,6 @@ void module_init(module m, char * modname)
     m->mod_reg_id = dlsym(m->handle, "mod_register_id");
     m->mod_pregen = dlsym(m->handle, "mod_pre_generation");
     m->mod_check_stc = dlsym(m->handle, "mod_check_stc");
-    m->mod_check_stc_day = dlsym(m->handle, "mod_check_stc_day");
     m->mod_finish = dlsym(m->handle, "mod_finish");
     
     if (m->mod_check_stc == NULL) {

@@ -17,28 +17,7 @@ int mod_initialize (module m)
     return(1);
 }
 
-/* return 1 if stc wouldn't fit, 0 if no problem */
-int mod_check_stc_day (ulvpclist list, stc cur, int day)
-{
-  stc temp_stc;
-
-  if (stc_is_free_period(cur)) {
-    return(0);
-  }
-
-  ulvpclist_init_pos(list);
-    while ((temp_stc = (stc) ulvpclist_data_at_pos(list)) != NULL) {
-      if (
-	  (stc_get_subject(cur) == stc_get_subject(temp_stc)) &&
-	  (stc_get_id(cur) != stc_get_id(temp_stc))
-	  ) return (1);
-      ulvpclist_move_pos(list);
-    }
-    
-    return(0);
-}
-
-/* return 1 if subject would be doubled up, 0 if no problem */
+/* return 1 if OK, 0 if not */
 int mod_check_stc (bigthing b, stc cur)
 {
     int period;

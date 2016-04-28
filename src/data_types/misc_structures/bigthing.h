@@ -24,11 +24,9 @@ struct _bigthing {
     int pos_period;
     mpz_t num_solutions;
     muvdalist *stcs;
-
     int ** subjects_days_left;
     int ** teachers_periods_teaching_in_days;
     program_data pd;
-    int stop_arrangements_flag;
 };
 typedef struct _bigthing bigthing_struct;
 typedef struct _bigthing* bigthing;

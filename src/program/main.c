@@ -6,7 +6,7 @@
 #include "module.h"
 #include "parse_args.h"
 #include "parse_xml_input.h"
-#include "algorithm2.h"
+#include "algorithm.h"
 
 int main (int argc, char * argv[])
 {
@@ -35,7 +35,7 @@ int main (int argc, char * argv[])
 
     /* Run the algorithm */
     /* algorithm_generate_timetable(b, ulvlist_copy_shallow(b->stcs[0])); */
-    algorithm2_generate_timetable_3(b);
+    algorithm_generate_timetable_2(b);
     
     /* Free things that we don't need */
     mpz_clear(b->num_solutions);

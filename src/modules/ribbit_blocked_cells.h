@@ -12,13 +12,11 @@
 #include "../data_types/misc_structures/bigthing.h"
 #include "../data_types/misc_structures/bct.h"
 #include "../data_types/school_structures/stc.h"
-#include "../data_types/list_structures/ulvpclist.h"
 
 int mod_initialize (module);
 int mod_register_id (int, int, char *);
 int mod_pre_generation(bigthing);
 int mod_check_stc (bigthing, stc);
-int mod_check_stc_day (ulvpclist, stc, int);
 int mod_blocked_find_pos_by_id(bct *, int, int);
 
 #endif

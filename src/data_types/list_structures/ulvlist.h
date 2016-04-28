@@ -31,7 +31,7 @@
 **
 ** mylist=ulvlist_constructor(el_free, el_disp, el_comp, NULL, NULL);
 **
-** If you do assign any to NULL, then be careful what ulvlist_ functions
+** If you do assign any to NULL, then becareful what ulvlist_ functions
 ** you call, as some do attempt to use the element functions (whether you
 ** have provided them or not).
 **

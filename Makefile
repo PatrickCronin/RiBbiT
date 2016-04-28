@@ -2,12 +2,12 @@
 # Started 27 February 2004
 # (c) Copyright Patrick Cronin
 
-COMPILE=cc -O0 -Wall -g -c
-LINK=libtool --mode=link gcc -export-dynamic -ldl -O0 -Wall -g
+COMPILE=cc -O1 -Wall -g -c
+LINK=libtool gcc -export-dynamic -ldl -O1 -Wall -g
 
-COMPILE_MOD=libtool --mode=compile gcc -g -O0 -c
-LINK_MOD=libtool --mode=link gcc -O0 -g -module -avoid-version -rpath /usr/lib
-INSTALL_MOD=libtool --mode=install cp -f
+COMPILE_MOD=libtool gcc -g -O1 -c
+LINK_MOD=libtool gcc -O1 -g -module -avoid-version -rpath /usr/local/lib
+INSTALL_MOD=libtool install -c
 LIBDIR=/usr/local/lib
 
 # Directory variables
@@ -40,12 +40,12 @@ $(BINDIR)/ribbit: $(PROGRAMDIR)/main.o $(PROGRAMDIR)/parse_args.o \
 		$(SCHOOLDIR)/teacher.o $(SCHOOLDIR)/class.o \
 		$(SCHOOLDIR)/room.o $(PROGRAMDIR)/parse_xml_input.o \
 		$(SCHOOLDIR)/meetings.o $(LISTSDIR)/ulvlist.o \
-		$(LISTSDIR)/ulvpclist.o $(PROGRAMDIR)/algorithm2.o \
-		$(PROGRAMDIR)/module.o $(MISCDIR)/bct.o \
-		$(LISTSDIR)/smlist.o $(SCHOOLDIR)/ttt.o \
-		$(SCHOOLDIR)/day.o $(LISTSDIR)/muvdalist.o
+		$(PROGRAMDIR)/algorithm.o $(PROGRAMDIR)/module.o \
+		$(MISCDIR)/bct.o $(LISTSDIR)/smlist.o \
+		$(SCHOOLDIR)/ttt.o $(SCHOOLDIR)/day.o \
+		$(LISTSDIR)/muvdalist.o
 	$(LINK) $(PROGRAMDIR)/main.o \
-		$(PROGRAMDIR)/algorithm2.o \
+		$(PROGRAMDIR)/algorithm.o \
 		$(PROGRAMDIR)/parse_args.o \
 		$(PROGRAMDIR)/parse_xml_input.o \
 		$(PROGRAMDIR)/memory.o \
@@ -54,7 +54,6 @@ $(BINDIR)/ribbit: $(PROGRAMDIR)/main.o $(PROGRAMDIR)/parse_args.o \
 		$(MISCDIR)/data.o \
 		$(LISTSDIR)/silist.o \
 		$(LISTSDIR)/ulvlist.o \
-		$(LISTSDIR)/ulvpclist.o \
 		$(LISTSDIR)/muvdalist.o \
 		$(LISTSDIR)/sandndlist.o \
 		$(LISTSDIR)/smlist.o \
@@ -75,13 +74,13 @@ $(BINDIR)/ribbit: $(PROGRAMDIR)/main.o $(PROGRAMDIR)/parse_args.o \
 		-o $(BINDIR)/ribbit
 
 # SRC/PROGRAM
-$(PROGRAMDIR)/algorithm2.o: $(PROGRAMDIR)/algorithm2.c \
-		$(PROGRAMDIR)/algorithm2.h $(LISTSDIR)/sandndlist.h \
+$(PROGRAMDIR)/algorithm.o: $(PROGRAMDIR)/algorithm.c \
+		$(PROGRAMDIR)/algorithm.h $(LISTSDIR)/sandndlist.h \
 		$(MISCDIR)/bigthing.h $(LISTSDIR)/ulvlist.h \
 		$(SCHOOLDIR)/stc.h $(SCHOOLDIR)/mtt.h \
 		$(PROGRAMDIR)/module.h
-	$(COMPILE) $(PROGRAMDIR)/algorithm2.c \
-		-o $(PROGRAMDIR)/algorithm2.o
+	$(COMPILE) $(PROGRAMDIR)/algorithm.c \
+		-o $(PROGRAMDIR)/algorithm.o
 
 $(PROGRAMDIR)/memory.o: $(PROGRAMDIR)/memory.c $(PROGRAMDIR)/memory.h
 	$(COMPILE) $(PROGRAMDIR)/memory.c \
@@ -90,7 +89,7 @@ $(PROGRAMDIR)/memory.o: $(PROGRAMDIR)/memory.c $(PROGRAMDIR)/memory.h
 $(PROGRAMDIR)/main.o: $(PROGRAMDIR)/main.c $(MISCDIR)/bigthing.h \
 		$(PROGRAMDIR)/parse_args.h $(MISCDIR)/data.h \
 		$(LISTSDIR)/ulvlist.h $(PROGRAMDIR)/parse_xml_input.h \
-		$(PROGRAMDIR)/algorithm2.h $(PROGRAMDIR)/module.h
+		$(PROGRAMDIR)/algorithm.h $(PROGRAMDIR)/module.h
 	$(COMPILE) $(PROGRAMDIR)/main.c \
 		-o $(PROGRAMDIR)/main.o
 
@@ -144,11 +143,6 @@ $(LISTSDIR)/ulvlist.o: $(LISTSDIR)/ulvlist.h $(LISTSDIR)/ulvlist.c \
 	$(PROGRAMDIR)/memory.h
 	$(COMPILE) $(LISTSDIR)/ulvlist.c \
 		-o $(LISTSDIR)/ulvlist.o
-
-$(LISTSDIR)/ulvpclist.o: $(LISTSDIR)/ulvpclist.h $(LISTSDIR)/ulvpclist.c \
-	$(PROGRAMDIR)/memory.h
-	$(COMPILE) $(LISTSDIR)/ulvpclist.c \
-		-o $(LISTSDIR)/ulvpclist.o
 
 # SRC/DATA_TYPES/SCHOOL_STRUCTURES
 $(SCHOOLDIR)/class.o: $(SCHOOLDIR)/class.h $(SCHOOLDIR)/class.c \
@@ -312,9 +306,6 @@ clean:
 	rm -f $(LISTSDIR)/*.o; \
 	rm -f $(SCHOOLDIR)/*.o; \
 	rm -f $(MODDIR)/*.o; \
-	rm -f $(MODDIR)/*.lo; \
-	rm -f $(MODDIR)/*.la; \
-	rm -rf $(MODDIR)/.libs; \
 	rm -f $(PROGRAMDIR)/*.o; \
 	rm -f $(TESTSDIR)/*.o; \
 	rm -f $(BINDIR)/*

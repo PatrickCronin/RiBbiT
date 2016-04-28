@@ -17,7 +17,7 @@ int mod_initialize (module m)
     return(1);
 }
 
-/* return 0 if OK, 1 if not */
+/* return 1 if OK, 0 if not */
 int mod_check_stc (bigthing b, stc cur)
 {
     int class;

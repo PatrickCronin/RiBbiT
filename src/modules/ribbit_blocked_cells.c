@@ -14,7 +14,6 @@
 #include "../data_types/misc_structures/data.h"
 #include "../data_types/misc_structures/bct.h"
 #include "../data_types/school_structures/stc.h"
-#include "../data_types/list_structures/ulvpclist.h"
 
 /* NB: The functions in this file could be made to look nicer
 ** by putting the different type of bcts in a single array,
@@ -120,108 +119,6 @@ int mod_pre_generation(bigthing b)
 	bct_prepare_table(meetings_ids[i], b);
 	i++;
     }
-}
-
-/* return 0 if OK, 1 or more if not */
-int mod_check_stc_day (ulvpclist list, stc cur, int day)
-{
-  /* This function could really be improved to do a more thorough check for a possible
-  ** arrangement of the different stcs already in the day list.  It is possible that
-  ** certain stcs which are multi-periods or other pre-existing blocked cells do not
-  ** do not permit the addition of other stcs with certain requirements.
-  */
-  
-  int list_pos;
-  int period;
-  int free_hole;
-  int num_teachers;
-  int teacher_num;
-  
-  /* Is the stc's subject blocked for the whole day? */
-  list_pos = mod_blocked_find_pos_by_id(subject_ids, num_subjects_registered, stc_get_subject(cur));
-  if (list_pos != -1) {
-    period = 0;
-    free_hole = 0;
-    while (period < NUM_PERIODS) {
-      if (!bct_is_marked(subject_ids[list_pos], day, period)) {
-	free_hole = 1;
-      }
-      period++;
-    }
-    if (!free_hole) {
-      return(1);
-    }
-  }
-
-  
-  /* Is the stc's class blocked for the whole day? */
-  list_pos = mod_blocked_find_pos_by_id(class_ids, num_classes_registered, stc_get_class(cur));
-  if (list_pos != -1) {
-    period = 0;
-    free_hole = 0;
-    while (period < NUM_PERIODS) {
-      if (!bct_is_marked(class_ids[list_pos], day, period)) {
-	free_hole = 1;
-      }
-      period++;
-    }
-    if (!free_hole) {
-      return(1);
-    }
-  }
-  
-  /* Are any of the stc's teachers blocked for the whole day? */
-  num_teachers = stc_get_num_teachers(cur);
-  for(teacher_num=0;teacher_num < num_teachers; teacher_num++) {
-    list_pos = mod_blocked_find_pos_by_id(teacher_ids, num_teachers_registered, stc_get_teacher_n(cur, teacher_num));
-    if (list_pos != -1) {
-      period = 0;
-      free_hole = 0;
-      while (period < NUM_PERIODS) {
-	if (bct_is_marked(teacher_ids[list_pos], day, period)) {
-	  free_hole = 1;
-	}
-	period++;
-      }
-      if (!free_hole) {
-	return(1);
-      }
-    }
-  }
-  
-  /* Is the stc's room blocked for the whole day? */
-  list_pos = mod_blocked_find_pos_by_id(subject_ids, num_rooms_registered, stc_get_room(cur));
-  if (list_pos != -1) {
-    period = 0;
-    free_hole = 0;
-    while (period < NUM_PERIODS) {
-      if (bct_is_marked(room_ids[list_pos], day, period)) {
-	free_hole = 1;
-      }
-      period++;
-    }
-    if (!free_hole) {
-      return(1);
-    }
-  }
-  
-  /* Is the stc's id blocked for the whole day? */
-    list_pos = mod_blocked_find_pos_by_id(meetings_ids, num_meetingses_registered, stc_get_id(cur));
-    if (list_pos != -1) {
-      period = 0;
-      free_hole = 0;
-      while (period < NUM_PERIODS) {
-	if (bct_is_marked(meetings_ids[list_pos], day, period)) {
-	  free_hole = 1;
-	}
-	period++;
-      }
-      if (!free_hole) {
-	return(1);
-      }
-    }
-    
-    return(0);
 }
 
 /* return 0 if OK, 1 or more if not */

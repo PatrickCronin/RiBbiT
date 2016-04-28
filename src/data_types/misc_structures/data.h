@@ -29,7 +29,6 @@ struct _program_data {
     ulvlist meetingses;
     sandndlist modules;
     sandndlist days;
-    long max_num_arrangements;
 };
 typedef struct _program_data program_data_struct;
 typedef struct _program_data* program_data;

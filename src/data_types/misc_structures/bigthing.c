@@ -55,7 +55,6 @@ void bigthing_init2(bigthing b)
     for (i=0; i < (NUM_TEACHERS + 1); i++) {
 	b->teachers_periods_teaching_in_days[i] = (int *) check_calloc (NUM_DAYS, sizeof(int));
     }
-    b->stop_arrangements_flag = 0;
 }
 
 void bigthing_prepare_subject_days_left(bigthing b)

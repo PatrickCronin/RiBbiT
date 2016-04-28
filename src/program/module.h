@@ -10,7 +10,6 @@
 #include "../data_types/misc_structures/bigthing.h"
 #include "../data_types/school_structures/stc.h"
 #include "../data_types/list_structures/sandndlist.h"
-#include "../data_types/list_structures/ulvpclist.h"
 
 #define MOD_GENERAL      1
 #define MOD_FOR_SUBJECTS 2
@@ -28,7 +27,6 @@ struct _module {
     int (*mod_reg_id)(int type, int id, char * value);
     int (*mod_pregen)(bigthing);
     int (*mod_check_stc)(bigthing, stc);
-    int (*mod_check_stc_day)(ulvpclist, stc, int);
     int (*mod_finish)(void);
 };
 typedef struct _module module_struct;

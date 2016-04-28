@@ -44,7 +44,6 @@ program_data data_initialize(void)
     d->meetingses = ulvlist_constructor(meetings_free, meetings_display, NULL, NULL, NULL);
     d->modules = sandndlist_constructor(module_compare_names, module_get_name, module_free, module_display);
     d->days = sandndlist_constructor(day_compare_names, day_get_name, day_free, day_display);
-    d->max_num_arrangements = -1;
     return (d);
 }
 
