@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+
+<!-- datafile2.xml -->
+<!-- 4 days, 3 periods, 4 teachers, 3 class, 3 subjects -->
+
+<school>
+
+<!--
+  <general-information>
+    <school name="O-Iipundi"/>
+    <timetable name="datafile2.xml"/>
+  </general-inforamtion>
+-->
+  <workdays days-in-cycle="4"/>
+
+  <periods periods-in-day="3"/>
+
+  <subjects>
+    <subject name="Maths"/>
+    <subject name="English"/>
+    <subject name="Geography"/>
+  </subjects>
+
+  <classes>
+    <class name="8A"/>
+    <class name="8B"/>
+    <class name="8C"/>
+  </classes>
+
+  <teachers>
+    <teacher name="Patrick"/>
+    <teacher name="Michael"/>
+    <teacher name="Cronin"/>
+    <teacher name="Matengu"/>
+  </teachers>
+
+  <rooms>
+    <room name="Computer"/>
+    <room name="Outside"/>
+  </rooms>
+
+  <class-meetings>
+    <meetings class="8A" subject="Maths" teacher="Patrick,Matengu" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8A" subject="English" teacher="Michael" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8A" subject="Geography" teacher="Cronin" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+
+    <meetings class="8B" subject="Maths" teacher="Patrick" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8B" subject="English" teacher="Michael" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8B" subject="Geography" teacher="Cronin"
+    hours-per-week="4" periods-arrangement="1+1+1+1"/>
+
+    <meetings class="8C" subject="Maths" teacher="Patrick,Matengu" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8C" subject="English" teacher="Michael" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8C" subject="Geography" teacher="Cronin"
+hours-per-week="4" periods-arrangement="1+1+1+1"/>
+  </class-meetings>
+</school>

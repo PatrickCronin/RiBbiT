@@ -1,0 +1,20 @@
+Now:
+
+Later:
+
+Done:
+* Allow multiple periods
+* Blocked cells module
+* Make free periods able to be added
+* Make sanity check
+  -- Check class's periods per week
+  -- Check teacher's periods per week
+* Make XML errors give configuration line number
+* Add teachers' time table to output
+* Give days and periods names
+  -- In the configuration file and on the output:
+  -- -- periods go from 1 to NUM_PERIODS
+  -- -- days go from 1 to NUM_DAYS
+  -- In the program source code:
+  -- -- periods go from 0 to NUM_PERIODS - 1
+  -- -- days go from 0 to NUM_DAYS - 1

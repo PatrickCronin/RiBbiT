@@ -1,0 +1,110 @@
+# Makefile for RiBbiT
+# Started 27 February 2004
+# (c) Copyright Patrick Cronin
+
+COMPILE=cc -O3 -Wall -g -c
+LINK=gcc -O3 -Wall -g
+
+# Directory variables
+PROGRAMDIR=src/program
+LISTSDIR=src/data_types/list_structures
+SCHOOLDIR=src/data_types/school_structures
+MISCDIR=src/data_types/misc_structures
+TESTSDIR=src/tests
+BINDIR=bin
+
+# ALL
+all: $(BINDIR)/test_silist_driver
+
+# SRC/PROGRAM
+$(PROGRAMDIR)/memory.o: $(PROGRAMDIR)/memory.c $(PROGRAMDIR)/memory.h
+	$(COMPILE) $(PROGRAMDIR)/memory.c \
+		-o $(PROGRAMDIR)/memory.o
+
+$(PROGRAMDIR)/algorithm.o: $(PROGRAMDIR)/algorithm.c \
+		$(PROGRAMDIR)/algorithm.h \
+		$(MISCDIR)/bigthing.h $(LISTSDIR)/ulvlist.h \
+		$(SCHOOLDIR)/stc.h $(SCHOOLDIR)/mtt.h
+	$(COMPILE) $(PROGRAMDIR)/algorithm.c \
+		-o $(PROGRAMDIR)/algorithm.o
+
+# SRC/DATA_TYPES/LIST_STRUCTURES
+$(LISTSDIR)/cuvlist.o: $(LISTSDIR)/cuvlist.h $(LISTSDIR)/cuvlist.c \
+		$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(LISTSDIR)/cuvlist.c \
+		-o $(LISTSDIR)/cuvlist.o
+
+$(LISTSDIR)/sandndlist.o: $(LISTSDIR)/sandndlist.h $(LISTSDIR)/sandndlist.c \
+		$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(LISTSDIR)/sandndlist.c \
+		-o $(LISTSDIR)/sandndlist.o
+
+$(LISTSDIR)/silist.o: $(LISTSDIR)/silist.h $(LISTSDIR)/silist.c \
+		$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(LISTSDIR)/silist.c \
+		-o $(LISTSDIR)/silist.o
+
+$(LISTSDIR)/ulvlist.o: $(LISTSDIR)/ulvlist.h $(LISTSDIR)/ulvlist.c \
+	$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(LISTSDIR)/ulvlist.c \
+		-o $(LISTSDIR)/ulvlist.o
+
+# SRC/DATA_TYPES/SCHOOL_STRUCTURES
+$(SCHOOLDIR)/class.o: $(SCHOOLDIR)/class.h $(SCHOOLDIR)/class.c \
+	$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(SCHOOLDIR)/class.c \
+		-o $(SCHOOLDIR)/class.o
+
+$(SCHOOLDIR)/meetings.o: $(SCHOOLDIR)/meetings.h $(SCHOOLDIR)/meetings.c \
+		$(PROGRAMDIR)/memory.h $(LISTSDIR)/silist.h
+	$(COMPILE) $(SCHOOLDIR)/meetings.c \
+		-o $(SCHOOLDIR)/meetings.o
+
+$(SCHOOLDIR)/mtt.o: $(SCHOOLDIR)/mtt.h $(SCHOOLDIR)/mtt.c \
+		$(PROGRAMDIR)/memory.h $(SCHOOLDIR)/stc.h
+	$(COMPILE) $(SCHOOLDIR)/mtt.c \
+		-o $(SCHOOLDIR)/mtt.o
+
+$(SCHOOLDIR)/room.o: $(SCHOOLDIR)/room.h $(SCHOOLDIR)/room.c \
+		$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(SCHOOLDIR)/room.c \
+		-o $(SCHOOLDIR)/room.o
+
+$(SCHOOLDIR)/stc.o: $(SCHOOLDIR)/stc.h $(SCHOOLDIR)/stc.c \
+		$(PROGRAMDIR)/memory.h $(LISTSDIR)/silist.h
+	$(COMPILE) $(SCHOOLDIR)/stc.c \
+		-o $(SCHOOLDIR)/stc.o
+
+$(SCHOOLDIR)/subject.o: $(SCHOOLDIR)/subject.h $(SCHOOLDIR)/subject.c \
+		$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(SCHOOLDIR)/subject.c \
+		-o $(SCHOOLDIR)/subject.o
+
+$(SCHOOLDIR)/teacher.o: $(SCHOOLDIR)/teacher.h $(SCHOOLDIR)/teacher.c \
+		$(PROGRAMDIR)/memory.h
+	$(COMPILE) $(SCHOOLDIR)/teacher.c \
+		-o $(SCHOOLDIR)/teacher.o
+
+# SRC/DATA_TYPES/MISC_STRUCTURES
+$(MISCDIR)/bigthing.o: $(MISCDIR)/bigthing.c $(MISCDIR)/bigthing.h \
+		$(PROGRAMDIR)/memory.h $(SCHOOLDIR)/mtt.h
+	$(COMPILE) $(MISCDIR)/bigthing.c \
+		-o $(MISCDIR)/bigthing.o
+
+# SRC/TESTS
+$(TESTSDIR)/test_silist_driver.o: $(TESTSDIR)/test_silist_driver.c \
+		$(PROGRAMDIR)/memory.h $(LISTSDIR)/silist.h
+	$(COMPILE) $(TESTSDIR)/test_silist_driver.c \
+		-o $(TESTSDIR)/test_silist_driver.o
+
+# BIN
+$(BINDIR)/test_silist_driver: $(PROGRAMDIR)/memory.o $(LISTSDIR)/silist.o \
+		$(TESTSDIR)/test_silist_driver.o
+	$(LINK) $(PROGRAMDIR)/memory.o $(LISTSDIR)/silist.o \
+		$(TESTSDIR)/test_silist_driver.o \
+		-o $(BINDIR)/test_silist_driver
+
+clean:
+	rm -rf *~; rm -f $(LISTSDIR)/*~; rm -rf $(SCHOOLDIR)/*~; \
+		rm -rf src/modules/*~; rm -rf $(PROGRAMDIR)/*~; \
+		rm -rf $(TESTSDIR)/*~;

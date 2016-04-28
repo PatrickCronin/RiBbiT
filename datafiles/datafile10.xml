@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+
+<!-- datafile10.xml -->
+<!-- 2 days, 4 periods, 3 teachers, 2 classes, 3 subjects -->
+<!-- Testing blocked-cells with day names -->
+
+<school>
+
+  <modules>
+    <module name="/usr/local/lib/ribbit_subject_sameday.so"/>
+    <module name="/usr/local/lib/ribbit_teacher_sametime.so"/>
+    <module name="/usr/local/lib/ribbit_blocked_cells.so"/>
+  </modules>
+
+  <workdays days-in-cycle="2">
+    <workday name="Monday"/>
+    <workday name="Tuesday"/>
+  </workdays>
+
+  <periods periods-in-day="4"/>
+
+  <subjects>
+    <subject name="Maths" blocked-cells="Monday-Tuesday:1-2"/>
+    <subject name="English"/>
+    <subject name="Geography"/>
+  </subjects>
+
+  <classes>
+    <class name="8A"/>
+    <class name="8B"/>
+  </classes>
+
+  <teachers>
+    <teacher name="Patrick"/>
+    <teacher name="Michael"/>
+    <teacher name="Cronin"/>
+  </teachers>
+
+  <rooms>
+    <room name="Computer"/>
+    <room name="Outside"/>
+  </rooms>
+
+  <class-meetings>
+    <meetings class="8A" subject="Maths" teacher="Patrick" hours-per-week="2"
+      periods-arrangement="1+1"/> 
+    <meetings class="8A" subject="English" teacher="Michael" hours-per-week="2"
+      periods-arrangement="1+1"/> 
+    <meetings class="8A" subject="Geography" teacher="Cronin" hours-per-week="2" periods-arrangement="1+1"/>
+
+    <meetings class="8B" subject="Maths" teacher="Patrick" hours-per-week="2" periods-arrangement="1+1"/>
+    <meetings class="8B" subject="English" teacher="Michael" hours-per-week="2" periods-arrangement="1+1"/>
+    <meetings class="8B" subject="Geography" teacher="Cronin" hours-per-week="2" periods-arrangement="1+1"/>
+  </class-meetings>
+</school>

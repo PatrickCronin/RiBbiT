@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+
+<!-- oiipundi_test1.xml -->
+<!-- 5 days, 8 periods, 17 teachers, 1 class, 13 subjects -->
+
+<school>
+
+  <modules>
+    <module name="/usr/local/lib/ribbit_subject_sameday.so"/>
+    <module name="/usr/local/lib/ribbit_teacher_sametime.so"/>
+    <module name="/usr/local/lib/ribbit_blocked_cells.so"/>
+    <module name="/usr/local/lib/ribbit_room_sametime.so"/>
+  </modules>
+
+  <workdays days-in-cycle="5">
+    <workday name="Monday"/>
+    <workday name="Tuesday"/>
+    <workday name="Wednesday"/>
+    <workday name="Thursday"/>
+    <workday name="Friday"/>
+  </workdays>
+
+  <periods periods-in-day="8"/>
+
+  <subjects>
+    <!-- subjects of five periods per week -->
+    <subject name="English" blocked-cells="Monday-Friday:6-8"/>
+    <subject name="Oshindonga"/>
+    <subject name="Maths" blocked-cells="Monday-Friday:5-8"/>
+
+    <!-- subjects of four periods per week -->
+    <subject name="Physical Science"/>
+    <subject name="Life Science"/>
+    <subject name="Agriculture"/>
+    <subject name="Business Management"/>
+
+    <!-- subjects of three periods per week -->
+    <subject name="Geography"/>
+    <subject name="History"/>
+
+    <!-- subjects of one period per week -->
+    <subject name="Basic Information Science"/>
+    <subject name="Life Skills"/>
+    <subject name="Physical Education"/>
+    <subject name="Computer Science"/>
+  </subjects>
+
+  <classes>
+    <class name="8A"/>
+  </classes>
+
+  <teachers>
+    <teacher name="Hamutenya"/>
+    <teacher name="Shipahu"/>
+    <teacher name="Iiyambo"/>
+    <teacher name="Matengu"/>
+    <teacher name="Mazila"/>
+    <teacher name="Shikongo"/>
+    <teacher name="Lutaka"/>
+    <teacher name="Kaluvi"/>
+    <teacher name="Nanyemba"/>
+    <teacher name="Nghipandulwa"/>
+    <teacher name="Shigwedha"/>
+    <teacher name="Joseph"/>
+    <teacher name="Nangolo"/>
+    <teacher name="Indongo"/>
+    <teacher name="Cronin"/>
+    <teacher name="Imbili"/>
+    <teacher name="Hikumwa"/>
+  </teachers>
+
+  <rooms>
+    <room name="Computer"/>
+    <room name="Outside"/>
+  </rooms>
+
+  <class-meetings>
+    <meetings class="8A" subject="Oshindonga" teacher="Nangolo" hours-per-week="4"/>
+    <meetings class="8A" subject="English" teacher="Iiyambo" hours-per-week="5"/>
+    <meetings class="8A" subject="Maths" teacher="Joseph" hours-per-week="5"/>
+    <meetings class="8A" subject="Physical Science" teacher="Lutaka" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8A" subject="Life Science" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8A" subject="Agriculture" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="8A" subject="Business Management" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8A" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8A" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8A" subject="Basic Information Science" teacher="Iiyambo" hours-per-week="1"/>
+    <meetings class="8A" subject="Life Skills" teacher="Iiyambo" hours-per-week="1"/>
+    <meetings class="8A" subject="Physical Education" teacher="Joseph" hours-per-week="1"/>
+    <meetings class="8A" subject="Computer Science" teacher="Hamutenya" hours-per-week="1"/>
+
+  </class-meetings>
+</school>
+
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+
+<!-- datafile3.xml -->
+<!-- 1 day, 2 periods, 3 teachers, 3 classes, 2 subjects -->
+
+<school>
+
+<!--
+  <general-information>
+    <school name="O-Iipundi"/>
+    <timetable name="datafile1.xml"/>
+  </general-inforamtion>
+-->
+  <modules>
+    <module name="/usr/lib/ribbit_subject_sameday.so"/>
+    <module name="/usr/lib/ribbit_teacher_sametime.so"/>
+  </modules>
+
+  <workdays days-in-cycle="1"/>
+
+  <periods periods-in-day="2"/>
+
+  <subjects>
+    <subject name="Maths"/>
+    <subject name="English"/>
+  </subjects>
+
+  <classes>
+    <class name="8A"/>
+    <class name="8B"/>
+    <class name="8C"/>
+  </classes>
+
+  <teachers>
+    <teacher name="Patrick"/>
+    <teacher name="Michael"/>
+    <teacher name="Cronin"/>
+  </teachers>
+
+  <rooms>
+    <room name="Computer"/>
+    <room name="Outside"/>
+  </rooms>
+
+  <class-meetings>
+    <meetings class="8A" subject="Maths" teacher="Patrick" hours-per-week="1" periods-arrangement="1"/>
+    <meetings class="8A" subject="English" teacher="Michael" hours-per-week="1" periods-arrangement="1"/>
+
+    <meetings class="8B" subject="Maths" teacher="Cronin" hours-per-week="1" periods-arrangement="1"/>
+    <meetings class="8B" subject="English" teacher="Patrick" hours-per-week="1" periods-arrangement="1"/>
+
+    <meetings class="8C" subject="Maths" teacher="Michael" hours-per-week="1" periods-arrangement="1"/>
+    <meetings class="8C" subject="English" teacher="Cronin" hours-per-week="1" periods-arrangement="1"/>
+  </class-meetings>
+</school>

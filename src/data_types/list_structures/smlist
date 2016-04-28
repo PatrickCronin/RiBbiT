@@ -1,0 +1,27 @@
+/* smlist.h
+** A simple list structure for strings.
+** Best for small lists -- the list is stored in consecutive
+** memory addresses.
+** Copyright 27 February 2004 Patrick Cronin
+*/
+
+#ifndef SIMPLE_STRING_LIST_H
+#define SIMPLE_STRING_LIST_H
+
+struct _smlist {
+    int size;
+    char ** list;
+};
+typedef struct _smlist smlist_struct;
+typedef struct _smlist * smlist;
+
+smlist smlist_constructor(void);
+void smlist_init(smlist);
+int smlist_find(smlist, char *);
+int smlist_get_size(smlist);
+char * smlist_get_element_n(smlist, int);
+void smlist_insert(smlist, char *);
+void smlist_free(smlist);
+void smlist_display(smlist);
+
+#endif

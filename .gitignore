@@ -1,0 +1,7 @@
+*~
+*.DS_Store
+*.o
+*.lo
+*.la
+/src/modules/.libs
+/bin/

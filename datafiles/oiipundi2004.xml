@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+
+<!-- oiipundi2004.xml -->
+<!-- 5 days, 8 periods, 17 teachers, 16 classes, 13 subjects -->
+
+<school>
+
+  <modules>
+    <module name="/usr/lib/ribbit_subject_sameday.so"/>
+    <module name="/usr/lib/ribbit_teacher_sametime.so"/>
+    <module name="/usr/lib/ribbit_blocked_cells.so"/>
+<!--    <module name="/usr/lib/ribbit_room_sametime.so"/> -->
+  </modules>
+
+  <workdays days-in-cycle="5">
+    <workday name="Monday"/>
+    <workday name="Tuesday"/>
+    <workday name="Wednesday"/>
+    <workday name="Thursday"/>
+    <workday name="Friday"/>
+  </workdays>
+
+  <periods periods-in-day="8"/>
+
+  <subjects>
+    <!-- subjects of five periods per week -->
+    <subject name="English" blocked-cells="Monday-Friday:7-8"/>
+    <subject name="Oshindonga"/>
+    <subject name="Maths" blocked-cells="Monday-Friday:6-8"/>
+
+    <!-- subjects of four periods per week -->
+    <subject name="Physical Science"/>
+    <subject name="Life Science"/>
+    <subject name="Agriculture"/>
+    <subject name="Business Management"/>
+
+    <!-- subjects of three periods per week -->
+    <subject name="Geography"/>
+    <subject name="History"/>
+
+    <!-- subjects of one period per week -->
+    <subject name="Basic Information Science"/>
+    <subject name="Life Skills"/>
+    <subject name="Physical Education"/>
+    <subject name="Computer Science"/>
+  </subjects>
+
+  <classes>
+    <class name="8A"/>
+    <class name="8B"/>
+    <class name="8C"/>
+    <class name="8D"/>
+    <class name="8E"/>
+    <class name="8F"/>
+    <class name="8G"/>
+    <class name="8H"/>
+    <class name="8I"/>
+    <class name="9A"/>
+    <class name="9B"/>
+    <class name="9C"/>
+    <class name="9D"/>
+    <class name="10A"/>
+    <class name="10B"/>
+    <class name="10C"/>
+  </classes>
+
+  <teachers>
+    <teacher name="Hamutenya"/>
+    <teacher name="Shipahu"/>
+    <teacher name="Iiyambo"/>
+    <teacher name="Matengu"/>
+    <teacher name="Mazila"/>
+    <teacher name="Shikongo"/>
+    <teacher name="Lutaka"/>
+    <teacher name="Kaluvi"/>
+    <teacher name="Nanyemba"/>
+    <teacher name="Nghipandulwa"/>
+    <teacher name="Shigwedha"/>
+    <teacher name="Joseph"/>
+    <teacher name="Nangolo"/>
+    <teacher name="Indongo"/>
+    <teacher name="Cronin"/>
+    <teacher name="Imbili"/>
+    <teacher name="Hikumwa"/>
+  </teachers>
+
+  <rooms>
+    <room name="Computer"/>
+    <room name="Outside"/>
+  </rooms>
+
+  <class-meetings>
+    <meetings class="8A" subject="Oshindonga" teacher="Nangolo" hours-per-week="4"/>
+    <meetings class="8A" subject="English" teacher="Iiyambo" hours-per-week="5"/>
+    <meetings class="8A" subject="Maths" teacher="Joseph" hours-per-week="5"/>
+    <meetings class="8A" subject="Physical Science" teacher="Lutaka" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8A" subject="Life Science" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8A" subject="Agriculture" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="8A" subject="Business Management" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8A" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8A" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8A" subject="Basic Information Science" teacher="Iiyambo" hours-per-week="1"/>
+    <meetings class="8A" subject="Life Skills" teacher="Iiyambo" hours-per-week="1"/>
+    <meetings class="8A" subject="Physical Education" teacher="Joseph" hours-per-week="1"/>
+    <meetings class="8A" subject="Computer Science" teacher="Hamutenya" hours-per-week="1"/>
+
+    <meetings class="8B" subject="Oshindonga" teacher="Nangolo" hours-per-week="4"/>
+    <meetings class="8B" subject="English" teacher="Indongo" hours-per-week="5"/>
+    <meetings class="8B" subject="Maths" teacher="Lutaka" hours-per-week="5"/>
+    <meetings class="8B" subject="Physical Science" teacher="Shikongo" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8B" subject="Life Science" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8B" subject="Agriculture" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8B" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="8B" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8B" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8B" subject="Basic Information Science" teacher="Shipahu" hours-per-week="1"/>
+    <meetings class="8B" subject="Life Skills" teacher="Joseph" hours-per-week="1"/>
+    <meetings class="8B" subject="Physical Education" teacher="Joseph" hours-per-week="1"/>
+    <meetings class="8B" subject="Computer Science" teacher="Hamutenya" hours-per-week="1"/>
+
+    <meetings class="8C" subject="Oshindonga" teacher="Nangolo" hours-per-week="4"/>
+    <meetings class="8C" subject="English" teacher="Matengu" hours-per-week="5"/>
+    <meetings class="8C" subject="Maths" teacher="Lutaka" hours-per-week="5"/>
+    <meetings class="8C" subject="Physical Science" teacher="Lutaka" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8C" subject="Life Science" teacher="Shikongo" hours-per-week="4"/>
+    <meetings class="8C" subject="Agriculture" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8C" subject="Business Management" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8C" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8C" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8C" subject="Basic Information Science" teacher="Lutaka" hours-per-week="1"/>
+    <meetings class="8C" subject="Life Skills" teacher="Imbili" hours-per-week="1"/>
+    <meetings class="8C" subject="Physical Education" teacher="Mazila" hours-per-week="1"/>
+    <meetings class="8C" subject="Computer Science" teacher="Mazila" hours-per-week="1"/>
+
+    <meetings class="8D" subject="Oshindonga" teacher="Joseph" hours-per-week="4"/>
+    <meetings class="8D" subject="English" teacher="Iiyambo" hours-per-week="5"/>
+    <meetings class="8D" subject="Maths" teacher="Joseph" hours-per-week="5"/>
+    <meetings class="8D" subject="Physical Science" teacher="Lutaka" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8D" subject="Life Science" teacher="Shikongo" hours-per-week="4"/>
+    <meetings class="8D" subject="Agriculture" teacher="Shigwedha" hours-per-week="4"/>
+    <meetings class="8D" subject="Business Management" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8D" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8D" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8D" subject="Basic Information Science" teacher="Kaluvi" hours-per-week="1"/>
+    <meetings class="8D" subject="Life Skills" teacher="Imbili" hours-per-week="1"/>
+    <meetings class="8D" subject="Physical Education" teacher="Nanyemba" hours-per-week="1"/>
+    <meetings class="8D" subject="Computer Science" teacher="Mazila" hours-per-week="1"/>
+
+    <meetings class="8E" subject="Oshindonga" teacher="Shigwedha" hours-per-week="4"/>
+    <meetings class="8E" subject="English" teacher="Iiyambo" hours-per-week="5"/>
+    <meetings class="8E" subject="Maths" teacher="Joseph" hours-per-week="5"/>
+    <meetings class="8E" subject="Physical Science" teacher="Nanyemba" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8E" subject="Life Science" teacher="Shikongo" hours-per-week="4"/>
+    <meetings class="8E" subject="Agriculture" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8E" subject="Business Management" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8E" subject="Geography" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8E" subject="History" teacher="Imbili" hours-per-week="3"/>
+    <meetings class="8E" subject="Basic Information Science" teacher="Nghipandulwa" hours-per-week="1"/>
+    <meetings class="8E" subject="Life Skills" teacher="Kaluvi" hours-per-week="1"/>
+    <meetings class="8E" subject="Physical Education" teacher="Shikongo" hours-per-week="1"/>
+    <meetings class="8E" subject="Computer Science" teacher="Shigwedha" hours-per-week="1"/>
+
+    <meetings class="8F" subject="Oshindonga" teacher="Nangolo" hours-per-week="4"/>
+    <meetings class="8F" subject="English" teacher="Shipahu" hours-per-week="5"/>
+    <meetings class="8F" subject="Maths" teacher="Joseph" hours-per-week="5"/>
+    <meetings class="8F" subject="Physical Science" teacher="Nanyemba" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8F" subject="Life Science" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8F" subject="Agriculture" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="8F" subject="Business Management" teacher="Nangolo" hours-per-week="4"/>
+    <meetings class="8F" subject="Geography" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8F" subject="History" teacher="Imbili" hours-per-week="3"/>
+    <meetings class="8F" subject="Basic Information Science" teacher="Imbili" hours-per-week="1"/>
+    <meetings class="8F" subject="Life Skills" teacher="Nghipandulwa" hours-per-week="1"/>
+    <meetings class="8F" subject="Physical Education" teacher="Matengu" hours-per-week="1"/>
+    <meetings class="8F" subject="Computer Science" teacher="Kaluvi" hours-per-week="1"/>
+
+    <meetings class="8G" subject="Oshindonga" teacher="Joseph" hours-per-week="4"/>
+    <meetings class="8G" subject="English" teacher="Shipahu" hours-per-week="5"/>
+    <meetings class="8G" subject="Maths" teacher="Nghipandulwa" hours-per-week="5"/>
+    <meetings class="8G" subject="Physical Science" teacher="Shikongo" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8G" subject="Life Science" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8G" subject="Agriculture" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="8G" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="8G" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8G" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8G" subject="Basic Information Science" teacher="Shipahu" hours-per-week="1"/>
+    <meetings class="8G" subject="Life Skills" teacher="Nghipandulwa" hours-per-week="1"/>
+    <meetings class="8G" subject="Physical Education" teacher="Matengu" hours-per-week="1"/>
+    <meetings class="8G" subject="Computer Science" teacher="Nghipandulwa" hours-per-week="1"/>
+
+    <meetings class="8H" subject="Oshindonga" teacher="Joseph" hours-per-week="4"/>
+    <meetings class="8H" subject="English" teacher="Lutaka" hours-per-week="5"/>
+    <meetings class="8H" subject="Maths" teacher="Lutaka" hours-per-week="5"/>
+    <meetings class="8H" subject="Physical Science" teacher="Joseph" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8H" subject="Life Science" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8H" subject="Agriculture" teacher="Shigwedha" hours-per-week="4"/>
+    <meetings class="8H" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="8H" subject="Geography" teacher="Nanyemba" hours-per-week="3"/>
+    <meetings class="8H" subject="History" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="8H" subject="Basic Information Science" teacher="Cronin" hours-per-week="1"/>
+    <meetings class="8H" subject="Life Skills" teacher="Indongo" hours-per-week="1"/>
+    <meetings class="8H" subject="Physical Education" teacher="Matengu" hours-per-week="1"/>
+    <meetings class="8H" subject="Computer Science" teacher="Joseph" hours-per-week="1"/>
+
+    <meetings class="8I" subject="Oshindonga" teacher="Shigwedha" hours-per-week="4"/>
+    <meetings class="8I" subject="English" teacher="Matengu" hours-per-week="5"/>
+    <meetings class="8I" subject="Maths" teacher="Nghipandulwa" hours-per-week="5"/>
+    <meetings class="8I" subject="Physical Science" teacher="Nanyemba" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="8I" subject="Life Science" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="8I" subject="Agriculture" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="8I" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="8I" subject="Geography" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="8I" subject="History" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="8I" subject="Basic Information Science" teacher="Cronin" hours-per-week="1"/>
+    <meetings class="8I" subject="Life Skills" teacher="Kaluvi" hours-per-week="1"/>
+    <meetings class="8I" subject="Physical Education" teacher="Hikumwa" hours-per-week="1"/>
+    <meetings class="8I" subject="Computer Science" teacher="Indongo" hours-per-week="1"/>
+
+    <meetings class="9A" subject="Oshindonga" teacher="Shipahu" hours-per-week="4"/>
+    <meetings class="9A" subject="English" teacher="Cronin" hours-per-week="5"/>
+    <meetings class="9A" subject="Maths" teacher="Shikongo" hours-per-week="5"/>
+    <meetings class="9A" subject="Physical Science" teacher="Nghipandulwa" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="9A" subject="Life Science" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="9A" subject="Agriculture" teacher="Indongo" hours-per-week="4"/>
+    <meetings class="9A" subject="Business Management" teacher="Matengu" hours-per-week="4"/>
+    <meetings class="9A" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="9A" subject="History" teacher="Shigwedha" hours-per-week="3"/>
+    <meetings class="9A" subject="Basic Information Science" teacher="Shipahu" hours-per-week="1"/>
+    <meetings class="9A" subject="Life Skills" teacher="Iiyambo" hours-per-week="1"/>
+    <meetings class="9A" subject="Physical Education" teacher="Lutaka" hours-per-week="1"/>
+    <meetings class="9A" subject="Computer Science" teacher="Shikongo" hours-per-week="1"/>
+
+    <meetings class="9B" subject="Oshindonga" teacher="Shigwedha" hours-per-week="4"/>
+    <meetings class="9B" subject="English" teacher="Cronin" hours-per-week="5"/>
+    <meetings class="9B" subject="Maths" teacher="Shigwedha" hours-per-week="5"/>
+    <meetings class="9B" subject="Physical Science" teacher="Nghipandulwa" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="9B" subject="Life Science" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="9B" subject="Agriculture" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="9B" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="9B" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="9B" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="9B" subject="Basic Information Science" teacher="Nghipandulwa" hours-per-week="1"/>
+    <meetings class="9B" subject="Life Skills" teacher="Nanyemba" hours-per-week="1"/>
+    <meetings class="9B" subject="Physical Education" teacher="Cronin" hours-per-week="1"/>
+    <meetings class="9B" subject="Computer Science" teacher="Iiyambo" hours-per-week="1"/>
+
+    <meetings class="9C" subject="Oshindonga" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="9C" subject="English" teacher="Cronin" hours-per-week="5"/>
+    <meetings class="9C" subject="Maths" teacher="Shikongo" hours-per-week="5"/>
+    <meetings class="9C" subject="Physical Science" teacher="Nanyemba" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="9C" subject="Life Science" teacher="Iiyambo" hours-per-week="4"/>
+    <meetings class="9C" subject="Agriculture" teacher="Mazila" hours-per-week="4"/>
+    <meetings class="9C" subject="Business Management" teacher="Matengu" hours-per-week="4"/>
+    <meetings class="9C" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="9C" subject="History" teacher="Shigwedha" hours-per-week="3"/>
+    <meetings class="9C" subject="Basic Information Science" teacher="Shigwedha" hours-per-week="1"/>
+    <meetings class="9C" subject="Life Skills" teacher="Hikumwa" hours-per-week="1"/>
+    <meetings class="9C" subject="Physical Education" teacher="Nanyemba" hours-per-week="1"/>
+    <meetings class="9C" subject="Computer Science" teacher="Hamutenya" hours-per-week="1"/>
+
+    <meetings class="9D" subject="Oshindonga" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="9D" subject="English" teacher="Matengu" hours-per-week="5"/>
+    <meetings class="9D" subject="Maths" teacher="Shigwedha" hours-per-week="5"/>
+    <meetings class="9D" subject="Physical Science" teacher="Lutaka" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="9D" subject="Life Science" teacher="Iiyambo" hours-per-week="4"/>
+    <meetings class="9D" subject="Agriculture" teacher="Nghipandulwa" hours-per-week="4"/>
+    <meetings class="9D" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="9D" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="9D" subject="History" teacher="Kaluvi" hours-per-week="3"/>
+    <meetings class="9D" subject="Basic Information Science" teacher="Shigwedha" hours-per-week="1"/>
+    <meetings class="9D" subject="Life Skills" teacher="Imbili" hours-per-week="1"/>
+    <meetings class="9D" subject="Physical Education" teacher="Hikumwa" hours-per-week="1"/>
+    <meetings class="9D" subject="Computer Science" teacher="Shikongo" hours-per-week="1"/>
+
+    <meetings class="10A" subject="Oshindonga" teacher="Imbili" hours-per-week="4"/>
+    <meetings class="10A" subject="English" teacher="Shipahu" hours-per-week="5"/>
+    <meetings class="10A" subject="Maths" teacher="Shikongo" hours-per-week="5"/>
+    <meetings class="10A" subject="Physical Science" teacher="Nghipandulwa" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="10A" subject="Life Science" teacher="Iiyambo" hours-per-week="4"/>
+    <meetings class="10A" subject="Agriculture" teacher="Matengu" hours-per-week="4"/>
+    <meetings class="10A" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="10A" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="10A" subject="History" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="10A" subject="Basic Information Science" teacher="Kaluvi" hours-per-week="1"/>
+    <meetings class="10A" subject="Life Skills" teacher="Nanyemba" hours-per-week="1"/>
+    <meetings class="10A" subject="Physical Education" teacher="Lutaka" hours-per-week="1"/>
+    <meetings class="10A" subject="Computer Science" teacher="Cronin" hours-per-week="1"/>
+
+    <meetings class="10B" subject="Oshindonga" teacher="Shipahu" hours-per-week="4"/>
+    <meetings class="10B" subject="English" teacher="Shipahu" hours-per-week="5"/>
+    <meetings class="10B" subject="Maths" teacher="Cronin" hours-per-week="5"/>
+    <meetings class="10B" subject="Physical Science" teacher="Nghipandulwa" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="10B" subject="Life Science" teacher="Iiyambo" hours-per-week="4"/>
+    <meetings class="10B" subject="Agriculture" teacher="Matengu" hours-per-week="4"/>
+    <meetings class="10B" subject="Business Management" teacher="Hikumwa" hours-per-week="4"/>
+    <meetings class="10B" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="10B" subject="History" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="10B" subject="Basic Information Science" teacher="Cronin" hours-per-week="1"/>
+    <meetings class="10B" subject="Life Skills" teacher="Hikumwa" hours-per-week="1"/>
+    <meetings class="10B" subject="Physical Education" teacher="Nanyemba" hours-per-week="1"/>
+    <meetings class="10B" subject="Computer Science" teacher="Shikongo" hours-per-week="1"/>
+
+    <meetings class="10C" subject="Oshindonga" teacher="Shipahu" hours-per-week="4"/>
+    <meetings class="10C" subject="English" teacher="Shipahu" hours-per-week="5"/>
+    <meetings class="10C" subject="Maths" teacher="Cronin" hours-per-week="5"/>
+    <meetings class="10C" subject="Physical Science" teacher="Nghipandulwa" hours-per-week="4" periods-arrangement="2+1+1"/>
+    <meetings class="10C" subject="Life Science" teacher="Iiyambo" hours-per-week="4"/>
+    <meetings class="10C" subject="Agriculture" teacher="Matengu" hours-per-week="4"/>
+    <meetings class="10C" subject="Business Management" teacher="Kaluvi" hours-per-week="4"/>
+    <meetings class="10C" subject="Geography" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="10C" subject="History" teacher="Hamutenya" hours-per-week="3"/>
+    <meetings class="10C" subject="Basic Information Science" teacher="Matengu" hours-per-week="1"/>
+    <meetings class="10C" subject="Life Skills" teacher="Imbili" hours-per-week="1"/>
+    <meetings class="10C" subject="Physical Education" teacher="Cronin" hours-per-week="1"/>
+    <meetings class="10C" subject="Computer Science" teacher="Iiyambo" hours-per-week="1"/>
+
+  </class-meetings>
+</school>

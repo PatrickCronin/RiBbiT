@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+
+<!-- datafile4.xml -->
+<!-- 4 days, 3 periods, 3 teachers, 4 classes, 3 subjects -->
+
+<school>
+
+<!--
+  <general-information>
+    <school name="O-Iipundi"/>
+    <timetable name="datafile1.xml"/>
+  </general-inforamtion>
+-->
+  <modules>
+    <module name="/usr/local/lib/ribbit_subject_sameday.so"/>
+    <module name="/usr/local/lib/ribbit_teacher_sametime.so"/>
+    <module name="/usr/local/lib/ribbit_blocked_cells.so"/>
+  </modules>
+
+  <workdays days-in-cycle="4"/>
+
+  <periods periods-in-day="4"/>
+
+  <subjects>
+    <subject name="Maths"/>
+    <subject name="English"/>
+    <subject name="Geography"/>
+    <subject name="History"/>
+  </subjects>
+
+  <classes>
+    <class name="8A"/>
+    <class name="8B"/>
+    <class name="8C"/>
+  </classes>
+
+  <teachers>
+    <teacher name="Patrick"/>
+    <teacher name="Michael"/>
+    <teacher name="Cronin"/>
+    <teacher name="Hileni"/>
+  </teachers>
+
+  <rooms>
+    <room name="Computer"/>
+    <room name="Outside"/>
+  </rooms>
+
+  <class-meetings>
+    <meetings class="8A" subject="Maths" teacher="Patrick" hours-per-week="4"
+      periods-arrangement="1+1+1+1" blocked-cells="*:0,2-3"/> 
+    <meetings class="8A" subject="English" teacher="Michael" hours-per-week="4"
+      periods-arrangement="1+1+1+1"/> 
+    <meetings class="8A" subject="Geography" teacher="Cronin"
+      hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8A" subject="History" teacher="Hileni" hours-per-week="4"
+      periods-arrangement="1+1+1+1" blocked-cells="*:1-3"/>
+
+
+    <meetings class="8B" subject="Maths" teacher="Patrick" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8B" subject="English" teacher="Michael" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8B" subject="Geography" teacher="Cronin" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8B" subject="History" teacher="Hileni" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+
+    <meetings class="8C" subject="Maths" teacher="Patrick" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8C" subject="English" teacher="Michael" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8C" subject="Geography" teacher="Cronin" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+    <meetings class="8C" subject="History" teacher="Hileni" hours-per-week="4" periods-arrangement="1+1+1+1"/>
+  </class-meetings>
+</school>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!-- Sample XML data file for Tablix  -->
+<!-- $Id: sample.xml,v 1.11.2.1 2003/10/19 15:17:32 avian Exp $ -->
+<school>
+  <info>
+    <title>Simple1 (3 classes, 3 teachers, 3 periods, 5 days)</title>
+    <address>simple2.xml</address>
+    <author>Patrick Cronin</author>
+  </info>
+  
+  <parameters>
+    <time days="5" periods="3"/>
+    <module name="sametime.so" weight="50" mandatory="yes"/>
+    <module name="timeplace.so" weight="50" mandatory="yes"/>
+    <module name="placecapability.so" weight="65" mandatory="yes"/>
+    <module name="subject_sameday.so" weight="50" mandatory="yes"/>
+    <internal name="impossible" weight="55"/>
+  </parameters>
+
+  <subjects>
+    <subject title="MAT8A" teacher="Nanyemba">
+      <restriction type="capability-place">Nanyemba</restriction>
+    </subject>
+    <subject title="MAT8B" teacher="Nanyemba">
+      <restriction type="capability-place">Nanyemba</restriction>
+    </subject>
+    <subject title="MAT8C" teacher="Nanyemba">
+      <restriction type="capability-place">Nanyemba</restriction>
+    </subject>
+
+    <subject title="ENG8A" teacher="Iiyambo">
+      <restriction type="capability-place">Iiyambo</restriction>
+    </subject>
+    <subject title="ENG8B" teacher="Iiyambo">
+      <restriction type="capability-place">Iiyambo</restriction>
+    </subject>
+    <subject title="ENG8C" teacher="Iiyambo">
+      <restriction type="capability-place">Iiyambo</restriction>
+    </subject>
+
+    <subject title="OSH8A" teacher="Shikongo">
+      <restriction type="capability-place">Shikongo</restriction>
+    </subject>
+    <subject title="OSH8B" teacher="Shikongo">
+      <restriction type="capability-place">Shikongo</restriction>
+    </subject>
+    <subject title="OSH8C" teacher="Shikongo">
+      <restriction type="capability-place">Shikongo</restriction>
+    </subject>
+  </subjects>
+
+  <building>
+    <classroom id="Nanyemba">
+      <capability type="capability-place">Nanyemba</capability>
+    </classroom>
+    <classroom id="Iiyambo">
+      <capability type="capability-place">Iiyambo</capability>
+    </classroom>
+    <classroom id="Shikongo">
+      <capability type="capability-place">Shikongo</capability>
+    </classroom>
+  </building>
+  
+  <timetable>
+    <class year="8" name="A"/>
+    <subject title="MAT8A" teacher="Nanyemba" perweek="5" uid="1"/>
+    <subject title="ENG8A" teacher="Iiyambo" perweek="5" uid="6"/>
+    <subject title="OSH8A" teacher="Shikongo" perweek="5" uid="11"/>
+  </timetable>
+
+  <timetable>
+    <class year="8" name="B"/>
+    <subject title="MAT8B" teacher="Nanyemba" perweek="5" uid="16"/>
+    <subject title="ENG8B" teacher="Iiyambo" perweek="5" uid="21"/>
+    <subject title="OSH8B" teacher="Shikongo" perweek="5" uid="26"/>
+  </timetable>
+
+  <timetable>
+    <class year="8" name="C"/>
+    <subject title="MAT8C" teacher="Nanyemba" perweek="5" uid="31"/>
+    <subject title="ENG8C" teacher="Iiyambo" perweek="5" uid="36"/>
+    <subject title="OSH8C" teacher="Shikongo" perweek="5" uid="41"/>
+  </timetable>
+	<chromo grade="0">
+		<gen period="0" day="3" room="Nanyemba" uid="1"/>
+		<gen period="0" day="4" room="Nanyemba" uid="2"/>
+		<gen period="2" day="2" room="Nanyemba" uid="3"/>
+		<gen period="1" day="0" room="Nanyemba" uid="4"/>
+		<gen period="1" day="1" room="Nanyemba" uid="5"/>
+		<gen period="0" day="0" room="Iiyambo" uid="6"/>
+		<gen period="2" day="4" room="Iiyambo" uid="7"/>
+		<gen period="0" day="2" room="Iiyambo" uid="8"/>
+		<gen period="0" day="1" room="Iiyambo" uid="9"/>
+		<gen period="1" day="3" room="Iiyambo" uid="10"/>
+		<gen period="1" day="4" room="Shikongo" uid="11"/>
+		<gen period="2" day="0" room="Shikongo" uid="12"/>
+		<gen period="2" day="1" room="Shikongo" uid="13"/>
+		<gen period="2" day="3" room="Shikongo" uid="14"/>
+		<gen period="1" day="2" room="Shikongo" uid="15"/>
+		<gen period="1" day="4" room="Nanyemba" uid="16"/>
+		<gen period="1" day="3" room="Nanyemba" uid="17"/>
+		<gen period="0" day="1" room="Nanyemba" uid="18"/>
+		<gen period="0" day="0" room="Nanyemba" uid="19"/>
+		<gen period="1" day="2" room="Nanyemba" uid="20"/>
+		<gen period="2" day="0" room="Iiyambo" uid="21"/>
+		<gen period="2" day="3" room="Iiyambo" uid="22"/>
+		<gen period="0" day="4" room="Iiyambo" uid="23"/>
+		<gen period="2" day="1" room="Iiyambo" uid="24"/>
+		<gen period="2" day="2" room="Iiyambo" uid="25"/>
+		<gen period="2" day="4" room="Shikongo" uid="26"/>
+		<gen period="1" day="0" room="Shikongo" uid="27"/>
+		<gen period="0" day="3" room="Shikongo" uid="28"/>
+		<gen period="1" day="1" room="Shikongo" uid="29"/>
+		<gen period="0" day="2" room="Shikongo" uid="30"/>
+		<gen period="2" day="0" room="Nanyemba" uid="31"/>
+		<gen period="2" day="4" room="Nanyemba" uid="32"/>
+		<gen period="2" day="3" room="Nanyemba" uid="33"/>
+		<gen period="2" day="1" room="Nanyemba" uid="34"/>
+		<gen period="0" day="2" room="Nanyemba" uid="35"/>
+		<gen period="1" day="2" room="Iiyambo" uid="36"/>
+		<gen period="1" day="0" room="Iiyambo" uid="37"/>
+		<gen period="1" day="4" room="Iiyambo" uid="38"/>
+		<gen period="1" day="1" room="Iiyambo" uid="39"/>
+		<gen period="0" day="3" room="Iiyambo" uid="40"/>
+		<gen period="2" day="2" room="Shikongo" uid="41"/>
+		<gen period="0" day="0" room="Shikongo" uid="42"/>
+		<gen period="0" day="4" room="Shikongo" uid="43"/>
+		<gen period="0" day="1" room="Shikongo" uid="44"/>
+		<gen period="1" day="3" room="Shikongo" uid="45"/>
+	</chromo>
+</school>
+<!-- End of file -->
+<!-- End of file -->
