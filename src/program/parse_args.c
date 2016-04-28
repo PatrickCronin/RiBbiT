@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "parse_args.h"
 #include "../data_types/misc_structures/data.h"
 

@@ -8,6 +8,7 @@
 #include <gmp.h>
 #include "algorithm.h"
 #include "module.h"
+#include "progress.h"
 #include "../data_types/misc_structures/bigthing.h"
 #include "../data_types/list_structures/ulvlist.h"
 #include "../data_types/list_structures/sandndlist.h"
@@ -29,10 +30,11 @@ void algorithm_generate_timetable_2(bigthing b)
 #endif
 
     b->depth++;
-
-    if ((b->depth % 10) == 0) {
-	printf("Recursive depth of %d out of %d\n", b->depth, NUM_TUPLES);
-    }
+    
+    // Unadvanced progress indicator
+    //    if ((b->depth % 10) == 0) {
+    //	printf("Recursive depth of %d out of %d\n", b->depth, NUM_TUPLES);
+    //    }
 
     muvdalist_init_pos_gn(b->stcs[b->pos_class]);
     stc_list_cur = muvdalist_get_next_unmarked_element_position(b->stcs[b->pos_class]);
@@ -109,6 +111,11 @@ void algorithm_generate_timetable_2(bigthing b)
 	    for (n=0; n<stc_num_teachers; n++) {
 		b->teachers_periods_teaching_in_days[stc_get_teacher_n(cur,n)][b->pos_day]--;
 	    }
+	}
+	if (b->depth <= NUM_CLASSES * PERIODS_PER_WEEK) {
+	  progress_increment_counter_by_factorial(b->progress, (unsigned long) (NUM_CLASSES * PERIODS_PER_WEEK - b->depth));
+	  progress_display(b->progress);
+	  fflush(stdout);
 	}
 	stc_list_cur = muvdalist_get_next_unmarked_element_position(b->stcs[b->pos_class]);
     }

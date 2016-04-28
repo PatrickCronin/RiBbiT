@@ -10,6 +10,7 @@
 #include "data.h"
 #include "../../program/memory.h"
 #include "../../program/module.h"
+#include "../../program/progress.h"
 #include "../school_structures/mtt.h"
 #include "../school_structures/meetings.h"
 #include "../school_structures/subject.h"
@@ -55,6 +56,7 @@ void bigthing_init2(bigthing b)
     for (i=0; i < (NUM_TEACHERS + 1); i++) {
 	b->teachers_periods_teaching_in_days[i] = (int *) check_calloc (NUM_DAYS, sizeof(int));
     }
+    b->progress = progress_constructor();
 }
 
 void bigthing_prepare_subject_days_left(bigthing b)

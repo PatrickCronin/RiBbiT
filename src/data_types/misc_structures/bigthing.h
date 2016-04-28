@@ -13,6 +13,7 @@
 #include <gmp.h>
 #include "../school_structures/mtt.h"
 #include "../list_structures/muvdalist.h"
+#include "../../program/progress.h"
 #include "data.h"
 
 struct _bigthing {
@@ -27,6 +28,7 @@ struct _bigthing {
     int ** subjects_days_left;
     int ** teachers_periods_teaching_in_days;
     program_data pd;
+    pc progress;
 };
 typedef struct _bigthing bigthing_struct;
 typedef struct _bigthing* bigthing;

@@ -9,19 +9,23 @@
 #ifndef PROGRESS_COUNTER
 #define PROGRESS_COUNTER
 
+#include <time.h>
 #include <gmp.h>
 
 struct _progress_counter {
-    gmp_z counter;
-    gmp_z total;
+  time_t start;
+  time_t finish;
+  mpz_t total;
+  mpz_t num_finished;
 };
 typedef struct _progress_counter pc_struct;
 typedef struct _progress_counter* pc;
 
 pc progress_constructor(void);
 void progress_init(pc);
-void progress_increment_counter_by_factorial(pc,int);
-char* progress_convert_gmp_z_to_standard_form(pc,gmp_z);
+void progress_increment_counter_by_factorial(pc, unsigned long);
+void progress_display (pc);
+//char* progress_convert_gmp_z_to_standard_form(pc,mpz_t);
 
 
 #endif

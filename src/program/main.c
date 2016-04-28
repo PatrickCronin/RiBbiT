@@ -3,10 +3,11 @@
 #include "../data_types/misc_structures/data.h"
 #include "../data_types/misc_structures/bigthing.h"
 #include "../data_types/list_structures/ulvlist.h"
+#include "algorithm.h"
 #include "module.h"
 #include "parse_args.h"
 #include "parse_xml_input.h"
-#include "algorithm.h"
+#include "progress.h"
 
 int main (int argc, char * argv[])
 {
@@ -32,6 +33,9 @@ int main (int argc, char * argv[])
     /* Run any mod_pregen functions before we start
     ** generating the timetables */
     module_run_pregens(b);
+
+    /* Initialize the progress counter */
+    progress_init(b->progress);
 
     /* Run the algorithm */
     /* algorithm_generate_timetable(b, ulvlist_copy_shallow(b->stcs[0])); */
